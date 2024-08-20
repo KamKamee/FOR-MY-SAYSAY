@@ -1,225 +1,228 @@
-.content {
+body {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #fae1dd;
   }
   
-  .card-wrapper {
-    width: 560px;
-  }
-  .card-wrapper .card {
-    position: relative;
-    width: 280px;
-    height: 497.7777777778px;
-    transform: perspective(1000px) translate(50%) scale(0.5) rotateY(0deg);
-    transform-origin: 50px center;
-    transition: 1s cubic-bezier(0, 0, 0, 0.94);
-  }
-  .card-wrapper .card .side {
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: perspective(1000px) rotateY(0);
-    transform-origin: right center;
-    transform-style: preserve-3d;
-    transition: 1s cubic-bezier(0, 0, 0, 0.94);
-  }
-  .card-wrapper .card .side.side-a {
-    border-radius: 10px 0 0 10px;
-  }
-  .card-wrapper .card .side.side-b {
-    border-radius: 10px 0 0 10px;
-  }
-  .card-wrapper .card .side .back,
-  .card-wrapper .card .side .front {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backface-visibility: hidden;
-    transition: 0 0.5s cubic-bezier(0, 0, 0, 0.94);
-    overflow: hidden;
-  }
-  .card-wrapper .card .side .front {
-    z-index: 2;
-    transform-origin: center;
-  }
-  .card-wrapper .card .side .back {
-    transform: rotateY(180deg);
-  }
-  .card-wrapper .card .side .back .heart {
-    transform: rotateY(180deg);
-    max-height: 100%;
-  }
-  .card-wrapper .card .side.side-b .front .heart .circle,
-  .card-wrapper .card .side.side-b .front .heart .rect {
-    background: #f9bec7;
-  }
-  .card-wrapper .card .side.side-b .back .heart .title {
-    display: none;
-  }
-  .card-wrapper.active .card {
-    transform: perspective(1000px) translate(0%) scale(1) rotateY(0);
-  }
-  .card-wrapper.active .card .side.side-b {
-    transform: perspective(1000px) rotateY(180deg);
-  }
-  .card-wrapper.active .card .side-a .front .heart .circle,
-  .card-wrapper.active .card .side-a .front .heart .rect {
-    background: #ff5c8a !important;
-  }
-  .card-wrapper.active .card .side-b .back .heart .circle,
-  .card-wrapper.active .card .side-b .back .heart .rect {
-    background: #ff5c8a !important;
-  }
-  .card-wrapper:not(.active) .heart {
-    cursor: pointer;
-  }
-  
-  .heart {
-    font-family: "Satisfy", cursive;
-  }
-  .heart .heart-half {
-    transform: rotate(-45deg) scale(0.8) translateX(23%) translateY(10%);
-    transform-origin: 140px 140px;
-  }
-  .heart .heart-half .circle {
-    width: 280px;
-    height: 280px;
-    background: red;
-    border-radius: 50%;
-    transition: background 1s cubic-bezier(0, 0, 0, 0.94);
-  }
-  .heart .heart-half .rect {
-    width: 280px;
-    height: 280px;
-    background: red;
-    margin-top: -140px;
-    transition: background 1s cubic-bezier(0, 0, 0, 0.94);
-  }
-  .heart .title {
-    position: absolute;
-    top: 30%;
-    font-family: "Quicksand", sans-serif;
-    right: 10%;
-    font-size: 38px;
-    transform: rotate(45deg);
-    color: #ff0a54;
-  }
-  
-  .ijustcode {
-    position: absolute;
-    top: 124.4444444444px;
-    right: 0;
-    height: 100px;
-    margin: auto;
-    backface-visibility: hidden;
-    transform: translateX(50%);
-  }
-  
-  .side-b .ijustcode code {
-    transform: rotateY(-180deg);
-  }
-  .side-b .front .ijustcode {
-    display: none;
-  }
-  
-  .hljs-addition, .hljs-attribute, .hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
-    color: #c379ba;
-    font-weight: 600;
-  }
-  
-  pre code.hljs {
-    border-radius: 10px;
-  }
-  
-  audio {
-    display: none;
-    position: absolute;
-    width: 0px;
-  }
-  
-  /*******
-  ********
-  
-  Confeti styles
-  
-  ********
-  *******/
-  @keyframes confetti-slow {
-    0% {
-      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-      transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
-    }
-  }
-  @keyframes confetti-medium {
-    0% {
-      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-      transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
-    }
-  }
-  @keyframes confetti-fast {
-    0% {
-      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-      transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
-    }
-  }
   .container {
-    /*width: 100vw;
-    height: 100vh;
-    background: #f0f0f0;*/
+    position: relative;
   }
   
-  .confetti-container {
-    perspective: 700px;
+  .valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+  }
+  
+  @keyframes up {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  
+  .envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f08080; 
+  }
+  
+  .envelope:before {
+    background-color: #f08080; 
+    content: "";
     position: absolute;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    width: 212px;
+    height: 212px;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+  }
+  
+  .card {
+    position: absolute;
+    background-color: #eae2b7;
+    width: 270px;
+    height: 170px;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4); 
+  }
+  
+  .card:before {
+    content: "";
+    position: absolute;
+    border: 3px solid #003049;
+    border-style: dotted;
+    width: 240px;
+    height: 140px;
+    left: 12px;
+    top: 12px;
+  }
+  
+  .text {
+    position: absolute;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 14px; /* Increase font size for better readability */
+    text-align: center;
+    line-height: 20px; /* Adjust line height for better spacing */
+    top: 20px; /* Adjust positioning */
+    left: 20px; /* Adjust positioning */
+    right: 20px; /* Added to keep text within bounds */
+    bottom: 20px; /* Added to keep text within bounds */
+    padding: 10px; /* Add padding for spacing around text */
+    color: #003049;
+}
+
+  .heart {
+    background-color: #ff69b4;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 140px;
+    left: 105px;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+  
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: #ff69b4;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+  
+  .heart:before {
+    top: -15px;
     left: 0;
+  }
+  
+  .heart:after {
+    left: 15px;
+    top: 0;
+  }
+  
+  .hearts {
+    position: absolute; 
+  }
+  
+  .one, .two, .three, .four, .five {
+    background-color: red;
+    display: inline-block;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 10px;
+    top: 50px;
+  }
+  
+  .one:before,
+  .one:after, .two:before, .two:after, .three:before, .three:after, .four:before, .four:after, .five:before, .five:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+  }
+  
+  .one:before, .two:before, .three:before, .four:before, .five:before {
+    top: -5px;
+    left: 0;
+  }
+  
+  .one:after, .two:after, .three:after, .four:after, .five:after {
+    left: 5px;
+    top: 0;
+  }
+  
+  .one {
+    left: 10px;
+    animation: heart 1s ease-out infinite; 
+  }
+  
+  .two {
+    left: 30px;
+    animation: heart 2s ease-out infinite; 
+  }
+  
+  .three {
+    left: 50px;
+    animation: heart 1.5s ease-out infinite;
+  }
+  
+  .four {
+    left: 70px;
+    animation: heart 2.3s ease-out infinite;
+  }
+  
+  .five {
+    left: 90px;
+    animation: heart 1.7s ease-out infinite;
+  }
+  
+  @keyframes heart {
+    0% {
+      transform: translateY(0) rotate(-45deg) scale(0.3);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) rotate(-45deg) scale(1.3);
+      opacity: 0.5;
+    }
+  }
+  
+  .front {
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+  }
+  
+  .front:before {
+    position: absolute;
+    content: "";
+    border-left: 300px solid #f8ad9d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+  }
+  
+  .shadow {
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 265px;
+    left: -15px;
+    animation: scale 3s linear infinite;
     z-index: -1;
   }
   
-  .confetti {
-    position: absolute;
-    z-index: 1;
-    top: -10px;
-    border-radius: 0%;
-  }
-  
-  .confetti-animation-slow {
-    animation: confetti-slow 2.5s linear 1 forwards;
-  }
-  
-  .confetti-animation-medium {
-    animation: confetti-medium 2s linear 1 forwards;
-  }
-  
-  .confetti-animation-fast {
-    animation: confetti-fast 1.5s linear 1 forwards;
-  }
-  
-  #gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0, 0, 0, 0.94);
+  @keyframes scale {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.85);
+    }
   }

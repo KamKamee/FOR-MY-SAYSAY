@@ -1,58 +1,29 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Sorry</title>
-    <link rel="stylesheet" href="style.css">
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UntoldCoding</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">  
-      <div class="valentines">
-        <div class="envelope"></div>
-        <div class="front"></div>
-        <div class="card">
-          <div class="text">
-            Hey babe, im very sorry for my mistake. I know im too dumb to know the difference between accountancy and marketing (I forgot and I should've researched it atleast). Im not perfect but I promise that I will never do the same mistake again. 
-          </div>
-          <div class="heart"></div> <!-- Corrected here -->
-        </div>
-        <div class="hearts">
-          <div class="one"></div>
-          <div class="two"></div>
-          <div class="three"></div>
-          <div class="four"></div>
-          <div class="five"></div>
-        </div>
+    <section id="home" class="home">
+      <div class="home_section"></div>
+      <div id="container">
+        <div class="left"></div>
+        <div class="right"></div>
+        <a href="new.html"
+          ><p>
+            Hello my SaySay <br />
+
+            <span>Click Here</span>
+          </p></a
+        >
       </div>
-      <div class="shadow"></div>
-    </div>
-
-   <div class="audio-container">
-  <iframe 
-    width="0" 
-    height="0" 
-    src="https://www.youtube.com/embed/Lg73px9riHA?autoplay=1&mute=1" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-    
-    <script>
-      $(document).ready(function () {
-    $('.container').mouseenter(function () {
-        $('.card').stop().animate({
-            top: '-90px'
-        }, 'slow');
-    }).mouseleave(function () {
-        $('.card').stop().animate({
-            top: 0
-        }, 'slow');
-    });
-});
-    </script>
-    
+      <h1><span>I&nbsp;</span><span>You</span></h1>
+      <h2>
+        I have Something for you💖 <br />
+      </h2>
+    </section>
   </body>
 </html>
